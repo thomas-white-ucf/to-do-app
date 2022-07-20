@@ -63,38 +63,75 @@ export function DragToDoItem({ task = "default" }: DragToDoItemProps) {
 
   return (
     <div className="container-flex container">
-      <div
-        className="box-styles box1"
-        draggable={true}
-        onDragOver={allowDrop}
-        onDrop={dropToDoHandler}
-        onDragStart={(event) => dragStartHandler(event, content)}
-        // onDragStart={(event) => dragStartHandler(event, "box 1")}
-      >
-        {/* {isDropped.intoDoColumn && content} */}
-        {dropLocation === "ToDoColumn" && content}
-      </div>
+      {dropLocation === "ToDoColumn" ? (
+        <div
+          className="box-styles box1"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropToDoHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+          // onDragStart={(event) => dragStartHandler(event, "box 1")}
+        >
+          {/* {isDropped.intoDoColumn && content} */}
+          {/* {dropLocation === "ToDoColumn" && content} */}
+          {content}
+        </div>
+      ) : (
+        <div
+          className="box-styles box-empty"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropToDoHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+          // onDragStart={(event) => dragStartHandler(event, "box 1")}
+        >
+          {/* {isDropped.intoDoColumn && content} */}
+          {/* {dropLocation === "ToDoColumn" && content} */}
+          {/* {content} */}
+        </div>
+      )}
 
-      <div
-        className="box-styles box2"
-        draggable={true}
-        onDragOver={allowDrop}
-        onDrop={dropInProgressHandler}
-        onDragStart={(event) => dragStartHandler(event, content)}
-        // onDragStart={(event) => dragStartHandler(event, "box 2")}
-      >
-        {dropLocation === "InProgressColumn" && content}
-      </div>
+      {dropLocation === "InProgressColumn" ? (
+        <div
+          className="box-styles box2"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropInProgressHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+          // onDragStart={(event) => dragStartHandler(event, "box 2")}
+        >
+          {content}
+        </div>
+      ) : (
+        <div
+          className="box-styles box-empty"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropInProgressHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+          // onDragStart={(event) => dragStartHandler(event, "box 2")}
+        ></div>
+      )}
 
-      <div
-        className="box-styles box3"
-        draggable={true}
-        onDragOver={allowDrop}
-        onDrop={dropDoneHandler}
-        onDragStart={(event) => dragStartHandler(event, content)}
-      >
-        {dropLocation === "DoneColumn" && content}
-      </div>
+      {dropLocation === "DoneColumn" ? (
+        <div
+          className="box-styles box3"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropDoneHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+        >
+          {content}
+        </div>
+      ) : (
+        <div
+          className="box-styles box-empty"
+          draggable={true}
+          onDragOver={allowDrop}
+          onDrop={dropDoneHandler}
+          onDragStart={(event) => dragStartHandler(event, content)}
+        ></div>
+      )}
     </div>
   );
 }
