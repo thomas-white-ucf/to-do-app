@@ -2,7 +2,7 @@
 
 To start > yarn install
          > yarn dev
-         > open Browser - <http://localhost:3000/>
+         > open Browser - <http://127.0.0.1:5173/>
 
 -
 
