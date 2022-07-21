@@ -2,26 +2,22 @@ import { useState } from "react";
 import { useToDoBoard } from "../context/ToDoBoardContext";
 import "./todo.css";
 
-// import { ToDoItem } from "./ToDoItem";
-
-// type AddToDoProps = {
-//   isOpen: boolean;
-// };
-
 export const AddToDo = () => {
-  // { isOpen }: AddToDoProps
-
   const { addToDo } = useToDoBoard();
 
   const [newToDo, setNewToDo] = useState("");
 
   const addToDoToContext = () => {
-    addToDo(newToDo);
+    // check to see newToDo has an input
+    if (newToDo.charAt(0)) {
+      addToDo(newToDo);
+    }
+    setNewToDo("");
   };
 
   return (
     <div className="todo-box">
-      <h3>Add a New To Do Item</h3>
+      <h2>Add a New To Do Item</h2>
 
       <div>
         <input

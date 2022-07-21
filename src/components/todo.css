@@ -1,8 +1,5 @@
 .container {
-  /* margin: 5rem; */
   width: 100%;
-  /* padding: 50px; */
-  /* justify-content: space-between; */
 }
 .container-flex {
   display: flex;
@@ -10,7 +7,18 @@
   width: 100%;
 }
 
+input,
+button {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
 .todo-box {
+  place-items: center;
+  justify-content: center;
+  width: 100%;
   margin-left: 10rem;
   border: 1px solid aquamarine;
   padding: 1rem;
@@ -37,11 +45,15 @@
 .box-styles {
   border-radius: 1rem;
   margin: 1rem;
+  padding: 1rem;
   width: 33%;
-  /* height: 50px; */
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+}
+.box-styles:hover {
+  transform: scale(1.1);
+  background-color: black;
+  font-size: larger;
 }
 
 .column-headers {
